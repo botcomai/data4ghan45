@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order History</title>
+
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/orders.css">
+
+    <!-- Core Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth-guard.js"></script>
+
+</head>
+
+<body>
+
+<button class="menu-btn" onclick="openMenu()">☰</button>
+
+<div id="menu-container"></div>
+
+<div class="container">
+
+    <div class="afa-logo-container">
+      <div class="afa-card-icon" style="margin: 0 auto 20px; font-size:48px; width:80px; height:80px; background:linear-gradient(135deg, #10b981 0%, #059669 100%); color:white; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; border-radius: 50%;">📦</div>
+    </div>
+
+    <h2 style="text-align:center;">Order History</h2>
+    <p class="subtitle" style="text-align:center;">Manage and track your recent data bundle orders</p>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input type="text" id="searchOrder"
+placeholder="Search by Id or Product">
+
+<select id="statusFilter">
+<option value="">All Status</option>
+<option value="Completed">Completed</option>
+<option value="Refunded">Refunded</option>
+<option value="Pending">Pending</option>
+<option value="Processing">Processing</option>
+<option value="Undelivered">Undelivered</option>
+<option value="In transit">In transit</option>
+</select>
+
+<input type="date" id="dateFilter">
+
+<input type="text" id="phoneFilter"
+placeholder="Enter phone number">
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Id</th>
+<th>STATUS</th>
+<th>MSISDN</th>
+<th>GB SIZE</th>
+<th>PRICE</th>
+<th>PRODUCT</th>
+<th>DELIVERED</th>
+<th>DATE</th>
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+<tr class="empty">
+<td colspan="8">No orders found</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/api-service.js"></script>
+<script src="js/orders.js"></script>
+
+</body>
+</html>
+
+
